@@ -1,0 +1,26 @@
+using System;
+namespace CaseConverter 
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the word");
+            string word1 = Console.ReadLine();
+            char[] word = word1.ToCharArray();
+            string result="";
+            for(int i=0;i<word.Length;i++)
+            {
+                if(i%2==0)
+                {
+                    result+=char.ToUpper(word[i]);
+                }
+                else
+                {
+                    result+= char.ToLower(word[i]);
+                }
+            }
+            Console.WriteLine(result);
+        }
+    }
+}

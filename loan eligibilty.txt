@@ -1,0 +1,25 @@
+namespace LoanEligibility 
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Enter Your income");
+            int income = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter your credit score");
+            int score = Convert.ToInt32(Console.ReadLine());
+            if(income>=50000 && score >= 700)
+            {
+                Console.WriteLine("You are eligible for a loan");
+            }
+            else if(income>=25000 && score>=650)
+            {
+                Console.WriteLine("Eligible, but may face higher interest rates");
+            }
+            else
+            {
+                Console.WriteLine("You are not eligible for a loan");
+            }
+        }
+    }
+}
