@@ -1,0 +1,54 @@
+namespace TheRankFinder //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+        public int[] FindStudentsRank(int[,] stdMarks)
+        {
+            int count = stdMarks.GetLength(0);
+            int[] Rank = new int[count];
+            int[] Total = new int[count];
+            for(int i=0;i<count;i++)
+            {
+                int sum=0;
+                for(int j=0;j<5;j++)
+                {
+                    sum+=stdMarks[i,j];
+                }
+                Total[i]=sum;
+            }
+            for(int i=0;i<count;i++)
+            {
+                int curr = 1;
+                for(int j=0;j<count;j++)
+                {
+                    if(Total[j]>Total[i])
+                    {
+                        curr++;
+                    }
+                }
+                Rank[i]=curr;
+            }
+            return Rank;
+        }
+        
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+            Program p = new Program();
+            Console.WriteLine("Enter the number of students");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[,] stdMarks = new int[n,5];
+            for(int i=0;i<n;i++)
+            {
+                for(int j=0;j<5;j++)
+                {
+                    stdMarks[i,j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            int[] result = p.FindStudentsRank(stdMarks);
+            for(int i=1;i<=n;i++)
+            {
+                Console.WriteLine("Rank of student"+i+" is "+result[i]);
+            }
+        }
+    }
+}
