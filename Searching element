@@ -1,0 +1,38 @@
+using System;
+namespace search
+{
+    class BinarySearch
+    {
+        public static void Main()
+        {
+            Console.WriteLine("Enter number of elements:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[n];
+            Console.WriteLine("Enter the elements:");
+            for(int i=0;i<n;i++)
+            {
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Enter required number's postion.");
+            int x = Convert.ToInt32(Console.ReadLine());
+            bool found = true;
+            for(int i=0;i<n;i++)
+            {
+                if(arr[i]==x){
+                    
+                    Console.WriteLine("Element found at "+(i+1)+" position");
+                    break;
+                    found = false;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            if(!found)
+            {
+                Console.WriteLine("Element is not found")
+            }
+        }
+    }
+}
