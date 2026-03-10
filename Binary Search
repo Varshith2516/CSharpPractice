@@ -1,0 +1,55 @@
+using System;
+namespace BinarySearch{
+    class BinarySearch{
+        public static void Main(string[] args){
+            Console.Write("Enter the size of the array : ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] a = new int[n];
+            for(int i=0;i<n;i++){
+                Console.Write("Enter the number at "+i+" : ");
+                a[i]=Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("The Original Array of Elements");
+            for(int i=0;i<n;i++){
+                Console.Write(a[i]+" ");
+            }
+            Console.WriteLine("\nThe Sorted array is:");
+            for(int i=0;i<n-1;i++){
+                for(int j=0;j<n-i-1;j++){
+                    if(a[j]>a[j+1]){
+                        int temp=a[j];
+                        a[j]=a[j+1];
+                        a[j+1]=temp;
+                    }
+                }
+            }
+            for(int i=0;i<n;i++){
+                Console.Write(a[i]+" ");
+            }
+            Console.WriteLine("\nThe Binary Search Element");
+            int search = Convert.ToInt32(Console.ReadLine());
+            int low=0;
+            int high = n-1;
+            int found = 0;
+            while(low<=high){
+                int mid = low+(high-low)/2;
+                if(a[mid]==search){
+                    found = mid;
+                    break;
+                }
+                else if(a[mid]<search){
+                    low=mid+1;
+                }
+                else{
+                    high=mid-1;
+                }
+            }
+            if(found != 0){
+                Console.WriteLine($"Element Found at {found}");
+            }
+            else{
+                Console.WriteLine("Element not found");
+            }
+        }
+    }
+}
