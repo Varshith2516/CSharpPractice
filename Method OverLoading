@@ -1,0 +1,31 @@
+using System;
+namespace over
+{
+    class Addition
+    {
+        public static int Add(int a,int b)
+        {
+            return  a+b;
+        }
+        public static int Add(int a,int b,int c)
+        {
+            return a+b+c;
+        }
+        public static int Add()
+        {
+            int a = 5;
+            int b = 10;
+            return a+b;
+        }
+        public static void Main()
+        {
+            Console.WriteLine("Enter 3 numbers:");
+            int a = Convert.ToInt32(Console.ReadLine());
+            int b = Convert.ToInt32(Console.ReadLine());
+            int c = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Sum of "+a+" and "+b+" is "+Add(a,b));
+            Console.WriteLine("Sum of "+a+","+b+" and "+c+" is "+Add(a,b,c));
+            Console.WriteLine("Sum of Default is "+Add());
+        }
+    }
+}
