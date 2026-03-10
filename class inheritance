@@ -1,0 +1,18 @@
+using System;
+namespace Classes{
+    class car{
+        public string Brand;
+        public string Model;
+        public void Display(){
+            Console.WriteLine($"The Brand is {Brand} and Model is {Model} ");
+        }
+    }
+    class Program{
+        public static void Main(string[] args){
+            car c = new car();
+            c.Brand = "BMW";
+            c.Model = "M4";
+            c.Display();
+        }
+    }
+}
