@@ -1,0 +1,36 @@
+using System;
+using System.Collections;
+namespace CollectionsP
+{
+    class ListDemo
+    {
+        public static void Main()
+        {
+            ArrayList Arr = new ArrayList();
+            Arr.Add(1);
+            Arr.Add(2);
+            Arr.AddRange(new ArrayList(){3,4,243,13,42,32,1,24,2});
+            Arr.Insert(1,99);
+            Arr.Sort();
+            foreach (var value in Arr)
+            {
+                Console.Write(value+" ");
+            }
+            Console.WriteLine();
+            Arr.Reverse();
+            foreach (var value in Arr)
+            {
+                Console.Write(value+" ");
+            }
+            Console.WriteLine();
+            Arr.Remove(2);
+            Arr.RemoveRange(1,3);
+            Console.WriteLine("13 is present in List "+Arr.Contains(13));
+            foreach (var value in Arr)
+            {
+                Console.Write(value+" ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
