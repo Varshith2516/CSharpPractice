@@ -1,0 +1,40 @@
+using System;
+namespace Encap
+{
+    public class Employee
+    {
+        public string name{get;set;}
+        public int id{get;set;}
+    }
+    class student
+    {
+        public double _balance;
+        public double Balance{
+            get {return  _balance; }
+            set
+            {
+                if(value>=0)
+                {
+                    _balance=value;
+                }
+                else
+                {
+                    Console.WriteLine("Balance must be in positive.");
+                }
+            }
+        }
+    }
+    class program
+    {
+        public static void Main()
+        {
+            student sd = new student();
+            sd.Balance = 5000;
+            sd.Balance = -500;
+            Console.WriteLine("Account Balance:"+sd.Balance);
+            Employee em = new Employee(){name = "Hima",id = 98765};
+            em.name="Varshith";
+            Console.WriteLine(em.name+" "+em.id);
+        }
+    }
+}
