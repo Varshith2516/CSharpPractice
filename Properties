@@ -1,0 +1,24 @@
+using System;
+namespace Properties
+{
+    class Details
+    {
+        private string name = "Hima";
+        public string Name
+        {
+            get{return name;}
+            set{name = value;}
+        }
+    }
+    class Student
+    {
+        public static void Main()
+        {
+            string name = Console.ReadLine();
+            Details Det = new Details();
+            Console.WriteLine("Default Name:"+Det.Name);
+            Det.Name = "Varshith";
+            Console.WriteLine("Updated Name is:"+Det.Name);
+        }
+    }
+}
