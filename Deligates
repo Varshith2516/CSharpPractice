@@ -1,0 +1,31 @@
+using System;
+public delegate int Operation(int x, int y);
+namespace Delegatedemo
+{
+    class Demo
+    {
+        public static int Add(int a, int b)
+        {
+            return a+b;
+        }
+        public static int sub(int a, int b)
+        {
+            return b-a;
+        }
+        public static int mult(int a, int b)
+        {
+            return a*b;
+        }
+        public static void Main()
+        {
+            int a = Convert.ToInt32(Console.ReadLine());
+            int b = Convert.ToInt32(Console.ReadLine());
+            Operation O1 = new Operation(Add);
+            Operation O2 = new Operation(sub);
+            Operation O3 = new Operation(mult);
+            Console.WriteLine(O1(a,b));
+            Console.WriteLine(O2(a,b));
+            Console.WriteLine(O3(a,b));
+        }
+    }
+}
