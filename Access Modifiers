@@ -1,0 +1,36 @@
+using System;
+namespace modifiers
+{
+    public class mod
+    {
+        public string name = "Varshith";
+        private int id = 1234;
+        protected double salary = 533211.44;
+        internal string dep = "developer";
+        protected internal string block = "SDB1";
+        private protected string project = "bank";
+        public void print()
+        {
+            Console.WriteLine("Printed by mod class ID:"+id);
+        }
+        public void details()
+        {
+            Console.WriteLine("Salary:"+salary);
+            Console.WriteLine("Block:"+block);
+            Console.WriteLine("Project:"+project);
+        }
+    }
+    public class typ : mod
+    {
+        public static void Main()
+        {
+            mod m = new mod();
+            Console.WriteLine("Printed by main class");
+            Console.WriteLine("Printed by typ Name:"+m.name);
+            Console.WriteLine("Department:"+m.dep);
+            Console.WriteLine("Printed by mod Class");
+            m.print();
+            m.details();
+        }
+    }
+}
