@@ -1,0 +1,28 @@
+using System;
+namespace Abstraction
+{
+    abstract class animals
+    {
+        public abstract void Sound();
+        public void type()
+        {
+            Console.WriteLine("This is for animals");
+        }
+    }
+    class Dog:animals
+    {
+        public override void Sound()
+        {
+            Console.WriteLine("Animals can't talk");
+        }
+    }
+    class D2
+    {
+        public static void Main()
+        {
+            Dog d = new Dog();
+            d.type();
+            d.Sound();
+        }
+    }
+}
