@@ -1,0 +1,29 @@
+using System;
+namespace Vehicles
+{
+    interface Car
+    {
+        public void Model();
+        public void Sound();
+    }
+    class Ferari:Car
+    {
+        public void Model()
+        {
+            Console.WriteLine("High end Model");
+        }
+        public void Sound()
+        {
+            Console.WriteLine("It makes a lot of sound");
+        }
+    }
+    class Program
+    {
+        public static void Main()
+        {
+            Ferari fr = new Ferari();
+            fr.Model();
+            fr.Sound();
+        }
+    }
+}
