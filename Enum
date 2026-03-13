@@ -1,0 +1,19 @@
+using System;
+namespace Enumb
+{
+    enum Percentage
+    {
+        pass,
+        fail,
+        average,
+        top
+    }
+    class Program
+    {
+        public static void Main()
+        {
+            Percentage result = Percentage.average;
+            Console.WriteLine("Result:"+result);
+        }
+    }
+}
