@@ -1,0 +1,30 @@
+using System;
+using System.IO;
+
+namespace Files
+{
+    class Access
+    {
+        public static void Main()
+        {
+            string fileName = "Filename.txt";
+            string write = "I am Himavarshith.";
+            File.WriteAllText(fileName, write);
+            string read = File.ReadAllText(fileName);
+            Console.WriteLine("Initial Read: " + read);
+            string add = "\nPursuing btech in Sathyabama University";
+            File.AppendAllText(fileName, add);
+            Console.WriteLine("Updated Content:\n" + File.ReadAllText(fileName));
+            using (File.Create(copyName)) { } 
+            Console.WriteLine("\nTemporary file created.");
+            File.Copy(copyName, "DestinationFile.txt", true);
+            Console.WriteLine("File copied to DestinationFile.txt");
+            Console.WriteLine("Does Copyfile exist? " + File.Exists(copyName));
+            File.Delete(copyName);
+            if (!File.Exists(copyName)) // Added '!' (Not operator)
+            {
+                Console.WriteLine("Success: Copyfile.txt has been deleted.");
+            }
+        }
+    }
+}
