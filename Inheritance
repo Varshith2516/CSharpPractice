@@ -1,0 +1,30 @@
+using System;
+namespace Vechiles
+{
+    class Car
+    {
+        public string name = "TATA";
+        public void Horn()
+        {
+            Console.WriteLine("Sounds loud");
+        }
+    }
+    class Tata:Car
+    {
+        string model = "Safari";
+        public void Company()
+        {
+            Console.WriteLine("Car model:"+model);
+        }
+    }
+    class Program
+    {
+        public static void Main()
+        {
+            Tata ta = new Tata();
+            ta.Horn();
+            Console.WriteLine("Company name is:"+ta.name);
+            ta.Company();
+        }
+    }
+}
